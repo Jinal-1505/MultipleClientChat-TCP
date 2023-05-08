@@ -8,10 +8,8 @@ const rl = readline.createInterface({
 //create CLIENT
 const client = new net.Socket();
 rl.question('Enter Username : ', (username) => {
-    console.log(`${username}`);
     //connection to server 
     client.connect(3000, 'localhost', () => {
-        console.log('Connect to sever');
         //usernme to server
         client.write(username + ` is join`);
     });
